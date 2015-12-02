@@ -1,4 +1,4 @@
-# Vue.js Skeleton
+# Vue.js practice
 
 - Vue.js: http://vuejs.org/
 - vue-router: https://github.com/vuejs/vue-router
@@ -19,9 +19,6 @@ npm run dev
 ```
 
 open localhost:8080
-
-![](http://i.imgur.com/VA7W3is.png)
-
 
 ## build
 

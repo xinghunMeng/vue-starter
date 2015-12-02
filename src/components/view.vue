@@ -1,14 +1,8 @@
 <template>
-  <div>
+  <div class='wrapper'>
     <comp-nav></comp-nav>
     <router-view></router-view>
   </div>
-  <!-- <nav class="uk-navbar">
-  	<ul class="uk-navbar-nav">
-  	  <li><a v-link="{ path: '/' }">Home</a></li>
-  	  <li><a v-link="{ path: '/about' }">About</a></li>
-  	</ul>
-  </nav> -->
 </template>
 
 <script>
@@ -24,7 +18,11 @@
       CompNav
     }
   }
-
-
-
 </script>
+
+<style lang='stylus'>
+  
+  .wrapper
+    padding-left: 80px
+
+</style>

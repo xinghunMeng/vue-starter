@@ -1,20 +1,26 @@
 <template>
-  <navbar></navbar>
-  <h1>{{ title }}</h1>
-  <router-view></router-view>
+  <comp-header></comp-header>
+  <view></view>
+  <!-- <h1>{{ title }}</h1> -->
 </template>
 
 <script>
-import Navbar from './components/navbar.vue'
+
+/**
+ * Module dependencies.
+ */
+
+import CompHeader from './components/header.vue'
+import View from './components/view.vue'
 
 export default {
   data () {
     return {
-      title: 'Hello world'
     }
   },
   components: {
-    Navbar
+    CompHeader,
+    View
   }
 }
 </script>

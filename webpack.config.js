@@ -1,7 +1,7 @@
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/route.js',
   output: {
     path: './build',
     publicPath: '/build/',
@@ -21,6 +21,11 @@ module.exports = {
       {
         test: /\.(css|styl)$/,
         loader: 'style!css!stylus'
+      },
+      {
+        // edit this for additional asset file types
+        test: /\.(png|jpg|gif)$/,
+        loader: 'file?name=[name].[ext]?[hash]'
       }
     ]
   },

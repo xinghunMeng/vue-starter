@@ -14,6 +14,7 @@
     props: ['item'],
     activate: function(done) {
       this.item.rating = '★★★★★☆☆☆☆☆'.substring(5 - this.item.rating, 10 - this.item.rating);
+      this.item.price = '￥' + this.item.price
       done();
     },
     data () {

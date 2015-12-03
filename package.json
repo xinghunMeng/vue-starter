@@ -1,7 +1,7 @@
 {
   "name": "menu-vue",
-  "version": "1.1.0",
-  "repository": "CodinCat/vue-webpack-skeleton",
+  "version": "1.0.0",
+  "repository": "luankefei/menu",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet",
     "build": "webpack --progress --hide-modules"

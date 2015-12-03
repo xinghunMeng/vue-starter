@@ -40,19 +40,16 @@
 
       // 路由参数：分类
       var category = this.$route.params.category
-
       console.log('--- list component created.', category)
 
       // TODO: 这里其实是请求
       setTimeout(() => {
 
         itemList.map((v) => {
-
           v.title += category
+
           return v
         });
-
-        console.log('--- category : hot')
 
         this.itemList = itemList
         

@@ -1,13 +1,33 @@
 <template>
   <aside class="navbar">
     <nav>
-    	<ul class="uk-navbar-nav">
-    	  <li><a v-link="{ path: '/' }">Home</a></li>
-    	  <li><a v-link="{ path: '/about' }">About</a></li>
+    	<ul>
+        <li v-for="(k, v) in ROUTE_MAP">
+          <a v-link="{ path: k }">{{v}}</a>
+        </li>
     	</ul>
     </nav>
   </aside>
 </template>
+
+<script>
+
+  const ROUTE_MAP = {
+    '/list/hot': '热咖啡',
+    '/list/ice': '冰咖啡',
+    '/list/frappuccino': '星冰乐',
+    '/about': '测试'
+  }
+    
+  export default {
+    data() {
+      return {
+        ROUTE_MAP
+      }
+    }
+  }
+
+</script>
 
 <style lang='stylus'>
 
@@ -18,7 +38,7 @@
     width: 78px
     height: 100%
     background: #f5f0eb
-  
+
     ul
       height: 100%
 

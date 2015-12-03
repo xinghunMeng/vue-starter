@@ -2,17 +2,13 @@
   <header>
     <h1>连咖啡</h1>
     <nav>
-      <select name="" id="" class="dropdown">
-        <option value="-1">分类</option>
-      </select>
+      <!-- <form class="pure-form">
+        <select class="dropdown">
+          <option value="-1">分类</option>
+        </select>
+      </form> -->
     </nav>
   </header>
-  <!-- <nav class="uk-navbar">
-  	<ul class="uk-navbar-nav">
-  	  <li><a v-link="{ path: '/' }">Home</a></li>
-  	  <li><a v-link="{ path: '/about' }">About</a></li>
-  	</ul>
-  </nav> -->
 </template>
 
 <style lang='stylus'>

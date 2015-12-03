@@ -27,26 +27,6 @@
     }
   ]
 
-
-  let itemList2 = [
-    {
-      title: '红茶',
-      rating: 1,
-      price: 35
-    },
-    {
-      title: '绿茶',
-      rating: 5,
-      price: 30
-    },
-    {
-      title: '冰红茶',
-      rating: 3,
-      price: 25
-    }
-  ]
-
-
   export default {
     data () {
       return {
@@ -58,12 +38,25 @@
     },
     created () {
 
+      // 路由参数：分类
+      var category = this.$route.params.category
+
+      console.log('--- list component created.', category)
+
       // TODO: 这里其实是请求
       setTimeout(() => {
 
-        this.itemList = itemList2
+        itemList.map((v) => {
 
-      }, 1000);
+          v.title += category
+          return v
+        });
+
+        console.log('--- category : hot')
+
+        this.itemList = itemList
+        
+      }, 0);
     }
   }
 </script>

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from './app.vue'
+import App from './App.vue'
 
-import About from './components/about.vue'
-import List from './components/list.vue'
+import About from './components/About.vue'
+import List from './components/List.vue'
 
 Vue.use(Router);
 var router = new Router();

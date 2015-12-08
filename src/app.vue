@@ -1,6 +1,6 @@
 <template>
   <comp-header></comp-header>
-  <view></view>
+  <router-view></router-view>
 </template>
 
 <script>
@@ -8,8 +8,7 @@
 /**
  * Module dependencies.
  */
-import CompHeader from './components/header.vue'
-import View from './components/view.vue'
+import CompHeader from './components/Header.vue'
 
 export default {
   data () {
@@ -17,8 +16,7 @@ export default {
     }
   },
   components: {
-    CompHeader,
-    View
+    CompHeader
   }
 }
 </script>

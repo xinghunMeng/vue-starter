@@ -106,6 +106,7 @@ header .business
     float: right
     max-width: 40px
     max-height: 40px
+    border-radius: 50%
     
   dl
     padding-right: 60px

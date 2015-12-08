@@ -20,9 +20,12 @@
 <style lang='stylus'>
 
 .cart
+  width: 100%
   height: 44px
   background: #333
   line-height: 44px
+  position: fixed
+  bottom: 0
   
   .price
     margin-left: 15px
@@ -40,5 +43,6 @@
     width: 130px
     text-align: center
     font-size: (16 / 14)rem
+    vertical-align: top
 
 </style>

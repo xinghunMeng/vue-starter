@@ -7,8 +7,17 @@
       <button class='add' @click='addToCart(item, this)'></button>
     </div>
     <div class="title">{{item.title}}</div>
-    <div class="rating">{{item.rating}}</div>
-    <div class="price">{{item.price}}</div>
+    <div class="rating">
+      好评 
+      <span>30/30</span>
+    </div>
+    <div class="price">
+      <span>
+        <i>￥</i>
+        {{item.price}}
+      </span>
+      <span>/份</span>
+    </div>
   </div>
 </template>
 
@@ -33,7 +42,7 @@
     },
     created () {
       this.item.rating = '★★★★★☆☆☆☆☆'.substring(5 - this.item.rating, 10 - this.item.rating);
-      this.item.price = '￥' + this.item.price;
+      // this.item.price = this.item.price;
     },
     methods: {
       addToCart,
@@ -62,10 +71,41 @@
   > .title 
     font-size: (16 / 14)rem
 
+  > .rating
+    padding-top: 5px
+    padding-bottom: 5px
+
+    span
+      position: relative
+      top: 1px
+
+  > .price
+    position: relative
+    left: -7px
+
+    > :first-child
+      color: #ff6800
+      font-size: (16 / 14)rem
+
+      i
+        font-style: normal
+        font-size: (12 / 14)rem
+        position: relative
+        top: -1px
+        left: 5px
+
+    > :last-child
+      color: #999
+      font-size: (12 / 14)rem
+      position: relative
+      top: -1px
+
   > .operate
     float: right
     margin-top: 30px
     line-height: 22px
+    position: relative
+    z-index: 1
 
     button
       border: none
@@ -76,11 +116,24 @@
       background-size: 100%
       background-repeat: no-repeat
       background-color: transparent
+      margin: 0 5px
   
+      &:active
+        background-color: transparent      
 
     .add
       background-image: url(/src/assets/images/add.png)
 
+      &:active,
+      &:hover
+        background-image: url(/src/assets/images/add_hover.png)        
+
+
     .sub
-      background-image: url(/src/assets/images/sub.png)      
+      background-image: url(/src/assets/images/sub.png)
+
+      &:active,
+      &:hover
+        background-image: url(/src/assets/images/sub_hover.png)
+
 </style>

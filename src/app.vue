@@ -22,5 +22,5 @@ export default {
 </script>
 
 <style lang="stylus">
-  @require './styles/style'
+  @require './styles/layout'
 </style>

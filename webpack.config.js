@@ -32,5 +32,10 @@ module.exports = {
   babel: {
     presets: ['es2015'],
     plugins: ['transform-runtime']
+  },
+  devServer: {
+    proxy: {
+      '/api/*': 'http://101.200.177.95:8001'
+    }
   }
 }

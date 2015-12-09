@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "vue-router": "^0.7.5",
-    "vue": "^1.0.8"
+    "vue": "^1.0.8",
+    "http-proxy": "*",
+    "superagent": "*"
   },
   "devDependencies": {
     "babel-core": "^6.1.0",

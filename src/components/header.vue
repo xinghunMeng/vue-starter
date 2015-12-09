@@ -4,10 +4,11 @@
     <div class='clearfix'>
       <div id='category' class='select' @click='open = !open'>
         <span>{{categorySelected || '分类'}}</span>
+        <i></i>
         <div v-show='open'>
           <ul>
-            <a v-link='{path: category.path}' v-for='category in categorys'>
-              <li @click='switchCategory(category, this)'>{{category.name}}</li>
+            <a v-link='{path: "/list/" + category.MenuId}' v-for='category in menus'>
+              <li @click='switchCategory(category, this)'>{{category.Name}}</li>
             </a>
           </ul>
         </div>
@@ -26,42 +27,42 @@
 <script>
 
   let switchCategory = (category, self) => {
-    self.categorySelected = category.name;
+    self.categorySelected = category.Name;
   }
   
   // 获取分类
-  let fetchCategorys = () => {
-    // console.log(App.menus);
-    // console.log(App)
-    // return App.menus;
-    return [
-      {
-        name: '热咖啡',
-        path: '/list/hot'
-      },
-      {
-        name: '冰咖啡',
-        path: '/list/ice'
-      },
-      {
-        name: '茶',
-        path: '/list/tea',
-      },
-      {
-        name: '关于',
-        path: '/about',
-      }
-    ];
-  }
+  // let fetchCategorys = () => {
+  //   // console.log(App.menus);
+  //   // console.log(App)
+  //   // return App.menus;
+  //   return [
+  //     {
+  //       name: '热咖啡',
+  //       path: '/list/hot'
+  //     },
+  //     {
+  //       name: '冰咖啡',
+  //       path: '/list/ice'
+  //     },
+  //     {
+  //       name: '茶',
+  //       path: '/list/tea',
+  //     },
+  //     {
+  //       name: '关于',
+  //       path: '/about',
+  //     }
+  //   ];
+  // }
 
   // 获取服务商信息
-  let fetchProvider = () => {
-    return {
-      name: '星巴克代购',
-      desc: '24小时营业 9元外送费',
-      logo: 'http://wx.qlogo.cn/mmopen/IbQhd2Y9oKc2zOTLXD4TZqVVh3BAHWLuGed8lcGJYgVsDaXTLOJp1IDWEZtEyUzEVLSLqGdDGEkdekGIKXCMHQ/0'
-    }
-  }
+  // let fetchProvider = () => {
+  //   return {
+  //     name: '星巴克代购',
+  //     desc: '24小时营业 9元外送费',
+  //     logo: 'http://wx.qlogo.cn/mmopen/IbQhd2Y9oKc2zOTLXD4TZqVVh3BAHWLuGed8lcGJYgVsDaXTLOJp1IDWEZtEyUzEVLSLqGdDGEkdekGIKXCMHQ/0'
+  //   }
+  // }
 
   export default {
     props: ['brand', 'menus'],
@@ -76,8 +77,8 @@
 
     // 头部不受路由控制，所以在组件创建时，初始化数据
     created () {
-      this.categorys = fetchCategorys();
-      this.provider = fetchProvider();
+      // this.categorys = fetchCategorys();
+      // this.provider = fetchProvider();
     },
     methods: {
       switchCategory
@@ -139,18 +140,26 @@ header .business
   z-index: 1
 
 .select
-  width: 60px
+  min-width: 50px
   height: 40px
   background-color: rgba(255, 255, 255, 0.5)
   /*overflow: hidden*/
   /*position: relative*/
-  padding: 0 10px
-  background-image: url(/src/assets/images/select.png)
-  background-repeat: no-repeat
-  background-position: 55px 16px
+  padding-left: 10px
+  padding-right: 10px
 
   > span
     line-height: 40px
+    padding-right: 5px
+
+  > i
+    width: 12px
+    height: 10px
+    background-image: url(/src/assets/images/select.png)
+    background-repeat: no-repeat
+    position: relative
+    top: 1px
+    display: inline-block
 
   > div
     position: absolute
@@ -173,7 +182,7 @@ header .business
         color: #fff
         cursor: pointer
 
-    ul >:last-child li
+    ul > :last-child li
       border-bottom: 0
 
 

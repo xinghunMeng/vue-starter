@@ -41,7 +41,7 @@
       }
     },
     created () {
-      this.item.rating = '★★★★★☆☆☆☆☆'.substring(5 - this.item.rating, 10 - this.item.rating);
+      // this.item.rating = '★★★★★☆☆☆☆☆'.substring(5 - this.item.rating, 10 - this.item.rating);
       // this.item.price = this.item.price;
     },
     methods: {
@@ -124,16 +124,15 @@
     .add
       background-image: url(/src/assets/images/add.png)
 
-      &:active,
-      &:hover
+      // 如果使用hover，在ios端这个状态会被保留
+      &:active
         background-image: url(/src/assets/images/add_hover.png)        
 
 
     .sub
       background-image: url(/src/assets/images/sub.png)
 
-      &:active,
-      &:hover
+      &:active
         background-image: url(/src/assets/images/sub_hover.png)
 
 </style>

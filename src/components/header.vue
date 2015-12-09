@@ -3,20 +3,20 @@
     <h1>连咖啡</h1>
     <div class='clearfix'>
       <div id='category' class='select' @click='open = !open'>
-        <span>分类</span>
+        <span>{{categorySelected || '分类'}}</span>
         <div v-show='open'>
           <ul>
             <a v-link='{path: category.path}' v-for='category in categorys'>
-              <li>{{category.name}}</li>
+              <li @click='switchCategory(category, this)'>{{category.name}}</li>
             </a>
           </ul>
         </div>
       </div>
       <div v-show='provider' class='business'>
-        <img :src='provider.logo' alt='星巴克' />
+        <img :src='brand.Logo' alt='{{brand.Name}}' />
         <dl>
-          <dt>{{provider.name}}</dt>
-          <dd>{{provider.desc}}</dd>
+          <dt>{{brand.Name}}</dt>
+          <dd>{{brand.Intro}}</dd>
         </dl>
       </div>
     </div>
@@ -24,9 +24,16 @@
 </template>
 
 <script>
+
+  let switchCategory = (category, self) => {
+    self.categorySelected = category.name;
+  }
   
   // 获取分类
   let fetchCategorys = () => {
+    // console.log(App.menus);
+    // console.log(App)
+    // return App.menus;
     return [
       {
         name: '热咖啡',
@@ -57,10 +64,12 @@
   }
 
   export default {
+    props: ['brand', 'menus'],
     data () {
       return {
         open: false,
         categorys: [],
+        categorySelected: '',
         provider: null
       }
     },
@@ -69,12 +78,16 @@
     created () {
       this.categorys = fetchCategorys();
       this.provider = fetchProvider();
+    },
+    methods: {
+      switchCategory
     }
   }
 
 </script>
 
 <style lang='stylus'>
+
 header h1
   text-align: center
   height: 50px

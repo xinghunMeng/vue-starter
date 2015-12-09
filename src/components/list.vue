@@ -18,6 +18,7 @@
       return {
         itemList: [],
         bill: []
+        // menus: []
       }
     },
     components: {
@@ -26,7 +27,13 @@
     },
     route: {
       data ({ to }) {
-        console.log('在这里初始化数据，List route: ', to);
+
+        let category = to.params.category;
+
+        // console.log('在这里初始化数据，List route: ', to);
+        // this.menus = App.menus;
+
+
         this.itemList = [{
           title: '馥芮白（超大）',
           rating: 4,

@@ -1,4 +1,4 @@
-# Vue.js practice
+# Vue.js starter
 
 - Vue.js: http://vuejs.org/
 - vue-router: https://github.com/vuejs/vue-router

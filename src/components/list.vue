@@ -10,15 +10,12 @@
   import Router from 'vue-router'
   import Cart from './Cart.vue'
 
-  // TODO: 测试数据
-  // let itemList = []
-
   export default {
+    props: ['menus'],
     data () {
       return {
         itemList: [],
         bill: []
-        // menus: []
       }
     },
     components: {
@@ -28,47 +25,13 @@
     route: {
       data ({ to }) {
 
-        let category = to.params.category;
+        // 默认取第一个列表
+        let menuId = to.params.category || 1;
 
-        // console.log('在这里初始化数据，List route: ', to);
-        // this.menus = App.menus;
-
-
-        this.itemList = [{
-          title: '馥芮白（超大）',
-          rating: 4,
-          price: 35
-        },
-        {
-          title: '馥芮白（中）',
-          rating: 5,
-          price: 30
-        },
-        {
-          title: '摩卡（大）',
-          rating: 0,
-          price: 25
-        }]
+        setTimeout(() => {
+          this.itemList = this.menus[menuId - 1].Skus
+        }, 0)
       }
     }
-    // created () {
-
-    //   // 路由参数：分类
-    //   var category = this.$route.params.category
-    //   console.log('--- list component created.', category)
-
-    //   // TODO: 这里其实是请求
-    //   setTimeout(() => {
-
-    //     itemList.map((v) => {
-    //       v.title += category
-
-    //       return v
-    //     });
-
-    //     this.itemList = itemList
-        
-    //   }, 0);
-    // }
   }
 </script>

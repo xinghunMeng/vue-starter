@@ -1,20 +1,17 @@
 <template>
   <div class='item'>
-    <img class='pic' src='http://wx.qlogo.cn/mmopen/qE9MKluetOntzRtRbNltRhIpicn8ktDDNbTPiaGCv1CrIFrdcW67s0gr4cRG2z79LFt6wNGBddjOAOL3xUaPczDQ/0' alt=''>
+    <img class='pic' :src='item.Image' alt=''>
     <div class='operate'>
       <button class='sub' @click='removeFromCart(item, this)'></button>
       <span>{{total}}</span>
       <button class='add' @click='addToCart(item, this)'></button>
     </div>
-    <div class="title">{{item.title}}</div>
-    <div class="rating">
-      好评 
-      <span>30/30</span>
-    </div>
+    <div class="title">{{item.Name}}</div>
+    <div class="rating">{{'★★★★★☆☆☆☆☆'.substring(5 - item.Rating / 10, 10 - item.Rating / 10)}}</div>
     <div class="price">
       <span>
         <i>￥</i>
-        {{item.price}}
+        {{item.UnitPrice / 100}}
       </span>
       <span>/份</span>
     </div>
@@ -41,8 +38,7 @@
       }
     },
     created () {
-      // this.item.rating = '★★★★★☆☆☆☆☆'.substring(5 - this.item.rating, 10 - this.item.rating);
-      // this.item.price = this.item.price;
+      // this.item.rating = '★★★★★☆☆☆☆☆'.substring(5 - this.item.Rating / 10, 10 - this.item.Rating / 10);
     },
     methods: {
       addToCart,

@@ -26,6 +26,7 @@
   line-height: 44px
   position: fixed
   bottom: 0
+  z-index: 9
   
   .price
     margin-left: 15px

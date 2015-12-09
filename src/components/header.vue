@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>连咖啡</h1>
+    <h1>{{brand.Name}}</h1>
     <div class='clearfix'>
       <div id='category' class='select' @click='open = !open'>
         <span>{{categorySelected || '分类'}}</span>
@@ -13,7 +13,7 @@
           </ul>
         </div>
       </div>
-      <div v-show='provider' class='business'>
+      <div v-show='brand' class='business'>
         <img :src='brand.Logo' alt='{{brand.Name}}' />
         <dl>
           <dt>{{brand.Name}}</dt>
@@ -29,40 +29,6 @@
   let switchCategory = (category, self) => {
     self.categorySelected = category.Name;
   }
-  
-  // 获取分类
-  // let fetchCategorys = () => {
-  //   // console.log(App.menus);
-  //   // console.log(App)
-  //   // return App.menus;
-  //   return [
-  //     {
-  //       name: '热咖啡',
-  //       path: '/list/hot'
-  //     },
-  //     {
-  //       name: '冰咖啡',
-  //       path: '/list/ice'
-  //     },
-  //     {
-  //       name: '茶',
-  //       path: '/list/tea',
-  //     },
-  //     {
-  //       name: '关于',
-  //       path: '/about',
-  //     }
-  //   ];
-  // }
-
-  // 获取服务商信息
-  // let fetchProvider = () => {
-  //   return {
-  //     name: '星巴克代购',
-  //     desc: '24小时营业 9元外送费',
-  //     logo: 'http://wx.qlogo.cn/mmopen/IbQhd2Y9oKc2zOTLXD4TZqVVh3BAHWLuGed8lcGJYgVsDaXTLOJp1IDWEZtEyUzEVLSLqGdDGEkdekGIKXCMHQ/0'
-  //   }
-  // }
 
   export default {
     props: ['brand', 'menus'],
@@ -73,12 +39,6 @@
         categorySelected: '',
         provider: null
       }
-    },
-
-    // 头部不受路由控制，所以在组件创建时，初始化数据
-    created () {
-      // this.categorys = fetchCategorys();
-      // this.provider = fetchProvider();
     },
     methods: {
       switchCategory

@@ -1,6 +1,6 @@
 <template>
   <comp-header :brand='brand' :menus='menus'></comp-header>
-  <router-view></router-view>
+  <router-view :menus='menus'></router-view>
 </template>
 
 <script>
@@ -35,7 +35,7 @@ export default {
     request
       .get(url, param)
       .end((err, res) => {
-        console.log('response: ', res);
+        // console.log('response: ', res);
         console.log('brand: ', res.body.data.brand);
         console.log('menus: ', res.body.data.menus);
 
